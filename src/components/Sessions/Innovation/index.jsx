@@ -15,7 +15,6 @@ import DateTime from "../SessionModals/DateTime";
 const Innovation = () => {
   const [dateTime, setDateTime]=useState(false);
   const handleClick = () =>{
-    alert('fasiha')
     setDateTime(true);
   }
   return (

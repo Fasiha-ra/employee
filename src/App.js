@@ -9,10 +9,10 @@ import Home from "./components/Home";
 import Error404 from "./components/Error404";
 import Feed from "./components/Feed";
 import MyProfile from "./components/MyProfile";
-import Support from "./components/Support";
 import SupportSec from "./components/Support";
 import Notification from "./components/Notification";
 import Sessions from "./components/Sessions";
+import Calendar from "./components/Calendar";
 const App = () => {
   return (
     <>
@@ -28,7 +28,7 @@ const App = () => {
             <Route path="/support" element={<SupportSec />} />
             <Route path="/feed" element={<Feed />} />
             <Route path="/session" element={<Sessions />} />
-            <Route path="/calendar" element={<Error404 />} />
+            <Route path="/calendar" element={<Calendar/>} />
             <Route path="/notification" element={<Notification />} />
           </Route>
         </Routes>

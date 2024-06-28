@@ -45,11 +45,11 @@ const TimeSlot = [
   }
 ];
 
-const DateTime = () => {
+const DateTime = (bgClr) => {
   const [startDate, setStartDate] = useState(new Date());
   const [showCalendar, setShowCalendar] = useState(false);
 
-  const toggleCalendar = (bgClr) => {
+  const toggleCalendar = () => {
     setShowCalendar(!showCalendar);
   };
 

@@ -32,6 +32,7 @@ export const MainLayoutSection = styled.div`
       }
     }
     .mainContent {
+      width: 100%;
       padding: 10px 10px 0 10px;
       flex-grow: 0;
       @media (min-width: 576px) {
