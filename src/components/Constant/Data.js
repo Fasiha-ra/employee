@@ -23,7 +23,9 @@ import enroll5 from "../../assets/sessions/enroll-5.png";
 import enroll6 from "../../assets/sessions/enroll-6.png";
 import enroll7 from "../../assets/sessions/enroll-7.png";
 import enroll8 from "../../assets/sessions/enroll-8.png";
-
+import certificate from "../../assets/profile/certificate.png";
+import ratingIcon from '../../assets/blog/blogLogo.png';
+import employe from '../../assets/profile/session.png';
 export const FooterData = [
   {
     title: "Help Center",
@@ -503,3 +505,86 @@ export const items = [
     content: 'Change is now and forever. It is not optional any more than breathing and sleeping and doing it well is a requirement of organization health. Learning to capture the competitive advantage of a changing landscape is an essential skill for leaders.'
   }
 ];
+export const RatingData = [
+  {
+    img:ratingIcon,
+    title:"Kayn Vampyr:",
+    para:"Meu brother mais vampiro de todos, te considero pakas."
+  },
+  {
+    img:ratingIcon,
+    title:"Kayn Vampyr:",
+    para:"Meu brother mais vampiro de todos, te considero pakas."
+  },
+  {
+    img:ratingIcon,
+    title:"Kayn Vampyr:",
+    para:"Meu brother mais vampiro de todos, te considero pakas."
+  },
+]
+export const Educationdata = [
+  {
+    maintitle:"Education",
+    title:"Education University",
+    subtitle:"Talent Management Specialization",
+    grade :"Grade : 8.0",
+    year:"6 Years",
+    since: "2020 - 2027",
+    address:"Mumbai, Maharashtra"
+  }
+];
+export const Experiencedata = [
+  {
+    maintitle:"Experience",
+    title:"Talent Management Professional",
+    subtitle:"SNDK Technologies",
+    grade :"Grade : 8.0",
+    year:"6 Years",
+    since: "2020 - 2027",
+    address:"Mumbai, Maharashtra"
+  }
+]
+export const CertificateData = [
+  {
+    img: certificate,
+    title:"UX Design Fundamentals.pdf"
+  },
+  {
+    img: certificate,
+    title:"UX Design Fundamentals.pdf"
+  },
+  {
+    img: certificate,
+    title:"UX Design Fundamentals.pdf"
+  },
+  {
+    img:certificate,
+    title:"UX Design Fundamentals.pdf"
+  },
+]
+export const employeeSession= [
+{
+  img:employe,
+  title:"Change Management : LeadingAgile Systems Change.....",
+  time:"09:00 pm  -  11:00 pm",
+  date:"April 30, 2024  -  May 07, 2024"
+},
+{
+  img:employe,
+  title:"Change Management : LeadingAgile Systems Change.....",
+  time:"09:00 pm  -  11:00 pm",
+  date:"April 30, 2024  -  May 07, 2024"
+},
+{
+  img:employe,
+  title:"Change Management : LeadingAgile Systems Change.....",
+  time:"09:00 pm  -  11:00 pm",
+  date:"April 30, 2024  -  May 07, 2024"
+},
+{
+  img:employe,
+  title:"Change Management : LeadingAgile Systems Change.....",
+  time:"09:00 pm  -  11:00 pm",
+  date:"April 30, 2024  -  May 07, 2024"
+},
+]

@@ -1,13 +1,5 @@
 import styled from "styled-components";
-import arrowNext from "../../../assets/home/trending/nextArrow.png";
-import arrowPrev from "../../../assets/home/trending/prevArrow.png";
-
-export const TrendingWrap = styled.div`
-  background-color: var(--white);
-  border-radius: 25px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
-  padding: 20px 10px;
-  margin-bottom: 20px;
+export const CertiWrapper = styled.div`
   width: 100%;
   max-width: 350px;
   @media (min-width: 400px) {
@@ -70,42 +62,37 @@ export const TrendingWrap = styled.div`
       justify-content: center;
     }
   }
-  .card {
-    width: 300px;
+  .slick-list {
+    padding: 20px;
+  }
+  .slick-slide {
+    width: 345px !important;
+  }
+  .slick-arrow {
+    width: 34px;
+    height: 34px;
+  }
+  .sessonCard {
+    padding: 10px;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    margin: 0 10px;
-    @media (min-width: 1440px) {
-      width: 100%;
-    }
-    .imgHolder {
-      img {
-        @media (max-width: 600px) {
-          width: 100%;
-        }
-        @media (min-width: 1440px) {
-          width: 100%;
-        }
-      }
-    }
-    h6 {
-      margin: 0;
-    }
-
-    .textHolder {
-      padding: 20px;
-    }
-    .logoWrap {
+    border: 1px solid var(--gray-50);
+    width: 350px !important;
+    .flex {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px 20px;
-      .logo {
-        display: flex;
-        gap: 10px;
+      gap: 20px;
+      padding-bottom: 20px;
+      img {
+        width: 21px;
+        height: 21px;
       }
+    }
+    .btn{
+        padding-bottom: 20px;
+        button{
+            margin: 0 auto;
+            display: block;
+
+        }
     }
   }
 `;

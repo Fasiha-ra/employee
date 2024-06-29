@@ -5,17 +5,34 @@ import author from "../../../assets/sessions/author.png";
 import stars from "../../../assets/sessions/stars.png";
 import date from "../../../assets/sessions/calendar.png";
 import time from "../../../assets/sessions/time.png";
-import session from "../../../assets/sessions/session.png";
+import sessionicon from "../../../assets/sessions/session.png";
 import Button from "../../Button";
 import Accordions from "../../Accordions";
 import { items } from "../../Constant/Data";
 import Modal from '../../Modal'
 import Calendar from "../SessionModals/DateTime";
 import DateTime from "../SessionModals/DateTime";
+import Session from "../SessionModals/Session";
+import Scheduled from "../SessionModals/Scheduled";
 const Innovation = () => {
   const [dateTime, setDateTime]=useState(false);
+  const [session, setSession]=useState(false);
+  const [schedule, setSchedule]=useState(false);
+  const [selectedTime, setSelectedTime] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(null);
   const handleClick = () =>{
     setDateTime(true);
+  }
+  const handleTimeSelect = (date,time) =>{
+    setSelectedDate(date);
+    setSelectedTime(time);
+    setDateTime(false);
+    setSession(true);
+    
+  }
+  const scheduledHandler = () =>{
+    setSession(false);
+    setSchedule(true);
   }
   return (
     <InnovationWrap>
@@ -48,7 +65,7 @@ const Innovation = () => {
           </div>
           <div className="session flex">
             <figure>
-              <img src={session} alt="session" />
+              <img src={sessionicon} alt="session" />
             </figure>
             <span>1 : 1 Session</span>
           </div>
@@ -77,9 +94,21 @@ const Innovation = () => {
       </div>
       {dateTime && (
         <Modal open={dateTime} setOpen={setDateTime} width="1200px">
-          <DateTime/>
+          <DateTime setOpen={setDateTime} onSelectTime={handleTimeSelect} />
         </Modal>
       )}
+      {session && (
+        <Modal open={session} setOpen={setSession} width="1200px">
+          <Session setOpen={setSession} selectedDate={selectedDate} selectedTime={selectedTime} click={scheduledHandler} />
+        </Modal>
+      )}
+      {
+        schedule && (
+          <Modal open={schedule} setOpen={setSchedule} width="1200px">
+          <Scheduled setOpen={setSchedule} selectedDate={selectedDate} selectedTime={selectedTime} />
+        </Modal>
+        )
+      }
     </InnovationWrap>
   );
 };

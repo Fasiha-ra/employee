@@ -13,6 +13,7 @@ import SupportSec from "./components/Support";
 import Notification from "./components/Notification";
 import Sessions from "./components/Sessions";
 import Calendar from "./components/Calendar";
+import EmployeeProfile from "./components/EmployeeProfile";
 const App = () => {
   return (
     <>
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="/session" element={<Sessions />} />
             <Route path="/calendar" element={<Calendar/>} />
             <Route path="/notification" element={<Notification />} />
+            <Route path="/profile" element={<EmployeeProfile />} />
           </Route>
         </Routes>
       </BrowserRouter>

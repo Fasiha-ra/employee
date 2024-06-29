@@ -2,14 +2,13 @@ import React from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import moment from "moment";
-import Title from "../Title";
-import { ManageTitle } from "../Title";
+import Title, { ManageTitle } from "../Title";
 
 const localizer = momentLocalizer(moment);
 
-const events = ({ onpreview }) => [
+const events = (onPreview) => [
   {
-    title: <Title  onpreview={onpreview} />,
+    title: <Title onpreview={onPreview} />,
     start: new Date(2024, 5, 28, 2, 0),
     end: new Date(2024, 5, 28, 3, 0),
   },
@@ -19,11 +18,10 @@ const events = ({ onpreview }) => [
     end: new Date(2024, 5, 28, 7, 0),
   },
   {
-    title: <Title />,
+    title: <Title onpreview={onPreview} />,
     start: new Date(2024, 5, 28, 11, 0),
     end: new Date(2024, 5, 28, 12, 0),
   },
-
   {
     title: <ManageTitle />,
     start: new Date(2024, 5, 28, 15, 0),
@@ -31,8 +29,9 @@ const events = ({ onpreview }) => [
   },
 ];
 
-const TimeSlots = ({ onpreview }) => {
-    const eventList = events(onpreview);
+const TimeSlots = ({ onPreview }) => {
+  const eventList = events(onPreview);
+
   return (
     <div style={{ height: 500 }}>
       <Calendar
@@ -40,8 +39,12 @@ const TimeSlots = ({ onpreview }) => {
         events={eventList}
         startAccessor="start"
         endAccessor="end"
-        views={["day"]} // Show only day view
-        defaultView="day" // Default view to show
+        views={["day"]}
+        defaultView="day"
+        onSelectEvent={(event) => {
+          
+          onPreview(); 
+        }}
       />
     </div>
   );

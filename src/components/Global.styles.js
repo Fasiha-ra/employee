@@ -167,10 +167,16 @@ export const GlobalStyles = createGlobalStyle`
     color: var(--body-text);
     font-weight: 400;
   }
-  .h2,
+  h2,
   .h2{
-    font-size: 30px;
+    font-size: 20px;
     line-height: 34px;
+    @media (min-width: 768px){
+      font-size: 26px;
+    }
+    @media (min-width: 992px){
+      font-size: 30px;
+    }
   }
   h3,
   .h3 {
@@ -244,4 +250,5 @@ export const GlobalStyles = createGlobalStyle`
     .rbc-event{
       height: 8.16667%;
     }}
+    
 `;
