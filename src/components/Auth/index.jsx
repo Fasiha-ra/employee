@@ -1,21 +1,34 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { SignUpWrapper } from "./SignUp.styles";
 import Logo from "../../assets/authentication/Logo.png";
 import bgImg from "../../assets/authentication/bg-img.png";
 import TextField from "../TextField/TextField";
 import Button from "../Button";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { serverDomain } from "../../constant/server-domain";
 const SignUp = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
-  const handleSubmit = (e) => {
-    e.preventDefault(); 
-    navigate('/signUp', { state: { email } });
-    console.log("Email:", email);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.get(`${serverDomain}/user?email=${email}`)
+      console.log('res email', response)
+      if (response.data.status === true) {
+        navigate('/dashboard')
+      }
+     
+      console.log("Email:", email);
+    } catch (e) {
+      navigate('/uploadProfile', { state: { email } });
+    }
   };
   const handleInputChange = (e) => {
     setEmail(e.target.value);
   };
+
   return (
     <>
       <SignUpWrapper>
@@ -35,7 +48,7 @@ const SignUp = () => {
             </div>
             <div className="inputHolder">
               <TextField
-              parentClass="emailWrapper"
+                parentClass="emailWrapper"
                 className="input-field"
                 field_Name="email"
                 type="email"

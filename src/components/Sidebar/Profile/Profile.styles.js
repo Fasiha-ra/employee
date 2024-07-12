@@ -10,6 +10,10 @@ export const ProfileWrap = styled.div`
   .imgHolder {
     img {
       margin: 0 auto;
+      border-radius: 50%;
+    width: 100%;
+    max-width: 160px;
+    min-height: 160px;
     }
   }
   .textHolder{

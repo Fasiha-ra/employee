@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const SignUpWrapper = styled.div`
-  background-color: var(--primary-darkblue);
+  background-color: var(--BG-bolor);
   height: 100vh;
   color: var(--white);
   display: flex;
@@ -83,6 +83,6 @@ export const SignUpWrapper = styled.div`
     @media (min-width: 1440px){
       width: 734px;
     }
-    
+    background-color: #5E6A79;
   }
 `;

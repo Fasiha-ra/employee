@@ -134,7 +134,7 @@ export const OtpInputWrapper = styled.div`
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.37);
+    background-color: #5E6A79;
     @media (min-width: 1440px) {
       min-height: 63px;
       min-width: 84px;
@@ -168,4 +168,15 @@ export const SearchbarWrap = styled.div`
       }
     }
   }
+`;
+export const HelperText = styled.div`
+  font-size: 12px; // Adjust font size
+  color: red; // Adjust color
+  margin-top: 5px;
+`;
+
+export const ErrorText = styled.div`
+  font-size: 12px; // Adjust font size
+  color: red; // Adjust color
+  margin-top: 5px;
 `;

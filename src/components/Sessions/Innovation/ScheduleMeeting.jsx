@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { InnovationWrap } from "./innovation.styles";
-import img1 from "../../../assets/sessions/enroll-1.png";
+import img1 from "../../../assets/sessions/schedule-1.png";
 import author from "../../../assets/sessions/author.png";
 import stars from "../../../assets/sessions/stars.png";
 import date from "../../../assets/sessions/calendar.png";
@@ -17,48 +17,23 @@ import Scheduled from "../SessionModals/Scheduled";
 import axios from "axios";
 import backicon from "../../../assets/sessions/back.png";
 import { serverDomain } from "../../../constant/server-domain";
-const ChangeManagement = ({BackToPage}) => {
-  const [dateTime, setDateTime] = useState(false);
-  const [session, setSession] = useState(false);
-  const [schedule, setSchedule] = useState(false);
-  const [selectedTime, setSelectedTime] = useState(null);
-  const [selectedDate, setSelectedDate] = useState(null);
-  const handleClick = async () => {
-  setDateTime(true)
-  };
-  const handleTimeSelect = (date, time) => {
-    setSelectedDate(date);
-    setSelectedTime(time);
-    setDateTime(false);
-    setSession(true);
-  };
-  // const scheduledHandler = async () => {
-  //   try {
-  //     const res = await axios.post(`${serverDomain}/session/sessionBooking`, {
-  //       userId: 1,
-  //       sessionId: 1,
-  //       corporateEmail: "contact@alhn.dev",
-  //       phone: "9399369854",
-  //       selectedTopic: ".....",
-  //       date: "2024-06-20",
-  //       fromTime: "09:30",
-  //       endTime: "21:30",
-  //       note: "",
-  //     });
-  //     console.log(res.data);
-
-  //     setSession(false);
-  //     setSchedule(true);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-  const scheduledHandler = () =>{
-    setSession(false);
-    setSchedule(true);
+import { useNavigate } from "react-router-dom";
+import EnrollSessionPopup from "./EnrollSessionPopup";
+const ScheduleMeeting = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const PopupOpen = () => {
+    setIsModalOpen(true);
   }
+  const navigate = useNavigate();
+  const BackToPage = () =>{
+    navigate("/dashboard");
+  }
+ const handleClick = () =>{
+
+ }
   return (
     <InnovationWrap>
+    
       <div className="backimg" onClick={BackToPage}>
         <img src={backicon} alt="" />
       </div>
@@ -96,7 +71,7 @@ const ChangeManagement = ({BackToPage}) => {
             </figure>
             <span>1 : 1 Session</span>
           </div>
-          <Button width="150px" onClick={handleClick}>
+          <Button width="150px" onClick={PopupOpen}>
             Enroll Now
           </Button>
         </div>
@@ -122,32 +97,14 @@ const ChangeManagement = ({BackToPage}) => {
         <Accordions items={items} />
       </div>
      </div>
-      {dateTime && (
-        <Modal open={dateTime} setOpen={setDateTime} width="1200px">
-          <DateTime setOpen={setDateTime} onSelectTime={handleTimeSelect} />
-        </Modal>
-      )}
-      {session && (
-        <Modal open={session} setOpen={setSession} width="1200px">
-          <Session
-            setOpen={setSession}
-            selectedDate={selectedDate}
-            selectedTime={selectedTime}
-            click={scheduledHandler}
-          />
-        </Modal>
-      )}
-      {schedule && (
-        <Modal open={schedule} setOpen={setSchedule} width="1200px">
-          <Scheduled
-            setOpen={setSchedule}
-            selectedDate={selectedDate}
-            selectedTime={selectedTime}
-          />
-        </Modal>
-      )}
+     { setIsModalOpen && (
+      <Modal open={isModalOpen} setOpen={setIsModalOpen} width="961px">
+        <EnrollSessionPopup/>
+      </Modal>
+    )}
     </InnovationWrap>
+    
   );
 };
 
-export default ChangeManagement;
+export default ScheduleMeeting;

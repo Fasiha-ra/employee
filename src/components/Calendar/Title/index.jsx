@@ -4,17 +4,18 @@ import people from "../../../assets/calendar/proples.png";
 import person from "../../../assets/calendar/person.png";
 import { FaPencilAlt } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
-const Title = ({onpreview}) => {
+
+const Title = () => {
   return (
     <TitleWrap>
-      <span>Change Management : Leading Agile Systems Change...</span>
+      <span>Change Management: Leading Agile Systems Change...</span>
       <span>
         <img src={people} alt="people" />
         20 Employees Enrolled
       </span>
       <span>
         <FaPencilAlt />
-        <div className="preview" onClick={onpreview}>
+        <div className="preview">
           <FaEye />
         </div>
       </span>
@@ -23,10 +24,11 @@ const Title = ({onpreview}) => {
 };
 
 export default Title;
+
 export const ManageTitle = () => {
   return (
     <TitleWrap>
-      <span>Change Management : Leading Agile Systems Change...</span>
+      <span>Change Management: Leading Agile Systems Change...</span>
       <span>
         <img src={person} alt="person" />
         Anish Mehra, Junior Engineer

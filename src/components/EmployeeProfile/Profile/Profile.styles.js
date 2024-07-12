@@ -4,6 +4,7 @@ export const ProfileHold = styled.div`
   .bgImg {
     img {
       width: 100%;
+      cursor: pointer;
     }
   }
   .logo {
@@ -11,6 +12,7 @@ export const ProfileHold = styled.div`
     z-index: 1;
     margin-top: -82px;
     img {
+      cursor: pointer;
       padding-left: 30px;
       width: 180px;
     }

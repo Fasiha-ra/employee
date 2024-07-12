@@ -28,6 +28,7 @@ export const CoachingWrap = styled.div`
       grid-template-columns: repeat(3, 1fr);
     }
     .card {
+      cursor: pointer;
       box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
       padding: 20px;
       .logoWrap {
@@ -48,14 +49,14 @@ export const CoachingWrap = styled.div`
         }
       }
       .textContent {
-        border-bottom: 1px solid var(--gray-50);
+        border-bottom: 1px solid var(--light-gray);
         padding-bottom: 20px;
         h5 {
           margin: 0;
         }
         span {
           font-size: 16px;
-          color: var(--gray-50);
+          color: var(--light-gray);
         }
       }
       .sessions {
@@ -64,7 +65,7 @@ export const CoachingWrap = styled.div`
         flex-direction: column;
         span {
           font-size: 16px;
-          color: var(--gray-50);
+          color: var(--light-gray);
         }
       }
     }

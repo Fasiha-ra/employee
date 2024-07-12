@@ -5,26 +5,35 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import date from "../../../assets/home/session/calendar.png";
 import time from "../../../assets/home/session/watch.png";
 import { Enroll } from "../../Constant/Data";
+import { useNavigate } from "react-router-dom";
 
-const EnrollSession = () => {
-  const [showFirstSet, setShowFirstSet] = useState(true);
-
+const EnrollSession = ({ onViewAll, showAll }) => {
+  const navigate = useNavigate();
+  const [showAllCards, setShowAllCards] = useState(showAll ? Enroll.length : 3);
+const NextPage = ()=> {
+navigate("/ScheduleMeeting");
+}
   const toggleCards = () => {
-    setShowFirstSet(!showFirstSet);
+    setShowAllCards(showAll ? 3 : Enroll.length);
+    onViewAll(); // Call the onViewAll function passed from parent to update the state in Home component
   };
 
   return (
     <EnrollWrapper>
       <div className="heading">
         <strong className="headingWrap">Enroll For Group Sessions</strong>
-        <Button width="94px" type="transparent" onClick={toggleCards}>
-          {showFirstSet ? "View " : "View Less"} <FaArrowRightLong />
-        </Button>
+        {!showAll && (
+          <Button width="94px" type="transparent" onClick={toggleCards}>
+            View All
+            <FaArrowRightLong />
+          </Button>
+        )}
       </div>
       <div className="cardHolder">
-        {Enroll.slice(showFirstSet ? 0 : 3, showFirstSet ? 3 : 9).map(
+        {Enroll.slice(0, showAllCards).map(
           (value, index) => (
-            <div className="card" key={index}>
+           <div className="wrap">
+            <div className="card" key={index} onClick={NextPage}>
               <img src={value.img} alt="Enroll" className="imgWrap" />
               <div className="textWrapper">
                 <h5>{value.title}</h5>
@@ -41,6 +50,12 @@ const EnrollSession = () => {
                 </div>
               </div>
             </div>
+            {showAll && (
+              <Button width="194px" >
+                Enroll Now
+              </Button>
+            )}
+           </div>
           )
         )}
       </div>

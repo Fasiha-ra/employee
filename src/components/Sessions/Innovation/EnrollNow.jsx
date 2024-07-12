@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { InnovationWrap } from "./innovation.styles";
-import img1 from "../../../assets/sessions/enroll-1.png";
+import img1 from "../../../assets/sessions/schedule-2.png";
 import author from "../../../assets/sessions/author.png";
 import stars from "../../../assets/sessions/stars.png";
 import date from "../../../assets/sessions/calendar.png";
@@ -17,7 +17,9 @@ import Scheduled from "../SessionModals/Scheduled";
 import axios from "axios";
 import backicon from "../../../assets/sessions/back.png";
 import { serverDomain } from "../../../constant/server-domain";
-const ChangeManagement = ({BackToPage}) => {
+import { useNavigate } from "react-router-dom";
+const EnrollNow = () => {
+    const navigate = useNavigate();
   const [dateTime, setDateTime] = useState(false);
   const [session, setSession] = useState(false);
   const [schedule, setSchedule] = useState(false);
@@ -26,6 +28,9 @@ const ChangeManagement = ({BackToPage}) => {
   const handleClick = async () => {
   setDateTime(true)
   };
+  const BackToPage = () =>{
+navigate("/dashboard");
+  }
   const handleTimeSelect = (date, time) => {
     setSelectedDate(date);
     setSelectedTime(time);
@@ -97,7 +102,7 @@ const ChangeManagement = ({BackToPage}) => {
             <span>1 : 1 Session</span>
           </div>
           <Button width="150px" onClick={handleClick}>
-            Enroll Now
+            Schedule Now
           </Button>
         </div>
         <figure className="thumb">
@@ -150,4 +155,4 @@ const ChangeManagement = ({BackToPage}) => {
   );
 };
 
-export default ChangeManagement;
+export default EnrollNow;

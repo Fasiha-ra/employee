@@ -5,6 +5,15 @@ export const EnrollWrapper = styled.div`
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
   padding: 20px 10px;
   margin-bottom: 20px;
+  .wrap{
+    display: block;
+    button{
+      margin: 0 auto;
+      display: block;
+    }
+    
+
+  }
   .heading {
     display: flex;
     justify-content: space-between;
@@ -27,25 +36,26 @@ export const EnrollWrapper = styled.div`
       grid-template-columns: repeat(3, 1fr);
     }
     .card {
+      margin-bottom: 20px;
       border: 1px solid var(--gray-50);
       border-radius: 10px 10px 0 0;
       .imgWrap {
         width: 100%;
-        @media (min-width: 768px){
+        /* @media (min-width: 768px){
           width: 270px;
-        }
+        } */
         @media (min-width: 1440px){
           width: 100%;
         }
       }
       .textWrapper {
         padding: 10px;
-        border-bottom: 1px solid var(--gray-50);
+        border-bottom: 1px solid var(--light-gray);
         h5 {
           margin: 0;
         }
         span {
-          color: var(--gray-50);
+          color: var(--light-gray);
         }
       }
       .timeHolder {

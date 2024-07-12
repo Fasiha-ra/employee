@@ -58,7 +58,7 @@ export const ProfileWrap = styled.div`
           width: 100%;
           margin-bottom: 15px;
         }
-        option{
+        option {
           background-color: transparent;
         }
       }
@@ -67,10 +67,9 @@ export const ProfileWrap = styled.div`
         grid-template-columns: repeat(1, 1fr);
         gap: 30px;
         padding-bottom: 30px;
-         @media (min-width: 768px) {
+        @media (min-width: 768px) {
           grid-template-columns: repeat(2, 1fr);
         }
-       
       }
       .btn {
         button {
@@ -80,14 +79,17 @@ export const ProfileWrap = styled.div`
       }
     }
   }
-  label{
+  label {
     color: var(--black);
   }
-  .custom-input{
-    input{
-      &::placeholder{
-        color: var(--black);
+  .custom-input {
+    input {
+      &::placeholder {
+        color: black;
       }
     }
+  }
+  input {
+    color: black;
   }
 `;

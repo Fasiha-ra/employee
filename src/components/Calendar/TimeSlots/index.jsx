@@ -3,51 +3,92 @@ import { Calendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import moment from "moment";
 import Title, { ManageTitle } from "../Title";
-
 const localizer = momentLocalizer(moment);
 
-const events = (onPreview) => [
+// Get today's date
+const today = new Date();
+
+const events = [
   {
-    title: <Title onpreview={onPreview} />,
-    start: new Date(2024, 5, 28, 2, 0),
-    end: new Date(2024, 5, 28, 3, 0),
+    id: 1,
+    title: "Title",
+    start: new Date(
+      today.getFullYear(),
+      today.getMonth(),
+      today.getDate(),
+      10,
+      0
+    ),
+    end: new Date(
+      today.getFullYear(),
+      today.getMonth(),
+      today.getDate(),
+      11,
+      0
+    ),
   },
   {
-    title: <ManageTitle />,
-    start: new Date(2024, 5, 28, 6, 0),
-    end: new Date(2024, 5, 28, 7, 0),
+    id: 2,
+    title: "ManageTitle",
+    start: new Date(
+      today.getFullYear(),
+      today.getMonth(),
+      today.getDate(),
+      5,
+      0
+    ),
+    end: new Date(today.getFullYear(), today.getMonth(), today.getDate(), 6, 0),
   },
   {
-    title: <Title onpreview={onPreview} />,
-    start: new Date(2024, 5, 28, 11, 0),
-    end: new Date(2024, 5, 28, 12, 0),
+    id: 3,
+    title: "Event Next Week",
+    start: new Date(
+      today.getFullYear(),
+      today.getMonth(),
+      today.getDate(),
+      8,
+      0
+    ),
+    end: new Date(today.getFullYear(), today.getMonth(), today.getDate(), 9, 0),
   },
   {
-    title: <ManageTitle />,
-    start: new Date(2024, 5, 28, 15, 0),
-    end: new Date(2024, 5, 28, 16, 0),
+    id: 4,
+    title: "Event Next Month",
+    start: new Date(
+      today.getFullYear(),
+      today.getMonth(),
+      today.getDate(),
+      3,
+      0
+    ),
+    end: new Date(today.getFullYear(), today.getMonth(), today.getDate(), 4, 0),
   },
 ];
 
-const TimeSlots = ({ onPreview }) => {
-  const eventList = events(onPreview);
-
-  return (
-    <div style={{ height: 500 }}>
-      <Calendar
-        localizer={localizer}
-        events={eventList}
-        startAccessor="start"
-        endAccessor="end"
-        views={["day"]}
-        defaultView="day"
-        onSelectEvent={(event) => {
-          
-          onPreview(); 
-        }}
-      />
-    </div>
-  );
+const CustomEvent = ({ event }) => {
+  console.log("CustomEvent rendering:", event);
+  if (event.title === "Title") {
+    return <Title />;
+  } else if (event.title === "ManageTitle") {
+    return <ManageTitle />;
+  } else {
+    return <span>{event.title}</span>;
+  }
 };
+const TimeSlots = ({ click }) => (
+  <div style={{ height: 800 }}>
+    <Calendar
+      localizer={localizer}
+      events={events}
+      views={["day"]}
+      defaultView="day"
+      defaultDate={new Date()}
+      onSelectEvent={click}
+      components={{
+        event: CustomEvent,
+      }}
+    />
+  </div>
+);
 
 export default TimeSlots;

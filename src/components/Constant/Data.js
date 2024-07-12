@@ -182,6 +182,48 @@ export const coachingProfile = [
     sessions: "10",
     uploaded: "1000",
   },
+  {
+    img: profile,
+    name: "Rahul Wagh",
+    type: "Talent Management",
+    sessions: "10",
+    uploaded: "1000",
+  },
+  {
+    img: profile,
+    name: "Rahul Wagh",
+    type: "Talent Management",
+    sessions: "10",
+    uploaded: "1000",
+  },
+  {
+    img: profile,
+    name: "Rahul Wagh",
+    type: "Talent Management",
+    sessions: "10",
+    uploaded: "1000",
+  },
+  {
+    img: profile,
+    name: "Rahul Wagh",
+    type: "Talent Management",
+    sessions: "10",
+    uploaded: "1000",
+  },
+  {
+    img: profile,
+    name: "Rahul Wagh",
+    type: "Talent Management",
+    sessions: "10",
+    uploaded: "1000",
+  },
+  {
+    img: profile,
+    name: "Rahul Wagh",
+    type: "Talent Management",
+    sessions: "10",
+    uploaded: "1000",
+  },
 ];
 export const ScheduleData = [
   {

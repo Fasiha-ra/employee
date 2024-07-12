@@ -5,6 +5,12 @@ export const InnovationWrap = styled.div`
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
   padding: 20px 10px;
   margin-bottom: 20px;
+  display: flex;
+  align-items: start;
+  gap: 5px;
+  .backimg{
+    cursor: pointer;
+  }
   .sessionDetail {
     display: block;
     margin: 0 auto;

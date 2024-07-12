@@ -5,6 +5,8 @@ import {
   InputWrap,
   StyledInput,
   StyledTexfield,
+  HelperText, // Import the new HelperText component
+  ErrorText, // Import the new ErrorText component
 } from "./Texfield.styles";
 
 const TextField = ({
@@ -21,6 +23,8 @@ const TextField = ({
   bgClr,
   border,
   parentClass,
+  helperText,
+  error,
   ...props
 }) => {
   const [isClicked, setIsClicked] = useState(false);
@@ -51,21 +55,24 @@ const TextField = ({
             value={value}
             id={field_Name}
             autoComplete="off"
+            aria-describedby={helperText ? `${field_Name}-helper-text` : undefined}
           />
         )}
 
         {variant === "textarea" && (
           <textarea
             {...props}
-            type={type}
             placeholder={placeholder}
             onChange={onChange}
             value={value}
             id={field_Name}
             autoComplete="off"
+            aria-describedby={helperText ? `${field_Name}-helper-text` : undefined}
           ></textarea>
         )}
       </StyledTexfield>
+      {helperText && <HelperText id={`${field_Name}-helper-text`}>{helperText}</HelperText>}
+      {error && <ErrorText>{error}</ErrorText>}
     </InputWrap>
   );
 };

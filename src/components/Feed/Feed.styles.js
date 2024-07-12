@@ -6,5 +6,7 @@ export const FeedWrap = styled.div`
     gap: 10px;
     flex: 1;
   }
- 
+ .feed{
+  width: 100%;
+ }
 `;

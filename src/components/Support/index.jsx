@@ -20,7 +20,7 @@ const SupportSec = () => {
             <Tickets width="186px" name="Close Ticket" title="Active Tickets" click={clickHandler}/>
           </div>
           <div className="issuesHolder support">
-            <Issues />
+            <Issues  click={clickHandler}/>
           </div>
           <div className="resolveTicke supportt">
             <Tickets

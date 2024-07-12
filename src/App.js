@@ -14,6 +14,8 @@ import Notification from "./components/Notification";
 import Sessions from "./components/Sessions";
 import Calendar from "./components/Calendar";
 import EmployeeProfile from "./components/EmployeeProfile";
+import EnrollNow from "./components/Sessions/Innovation/EnrollNow";
+import ScheduleMeeting from "./components/Sessions/Innovation/ScheduleMeeting";
 const App = () => {
   return (
     <>
@@ -32,6 +34,8 @@ const App = () => {
             <Route path="/calendar" element={<Calendar/>} />
             <Route path="/notification" element={<Notification />} />
             <Route path="/profile" element={<EmployeeProfile />} />
+            <Route path="/EnrollNow" element={<EnrollNow />} />
+            <Route path="/ScheduleMeeting" element={<ScheduleMeeting />} />
           </Route>
         </Routes>
       </BrowserRouter>

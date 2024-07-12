@@ -11,7 +11,9 @@ const Calendar = () => {
   const openInnovation = () => {
     setShowInnovation(true);
   };
-
+const BackToPage = () =>{
+  setShowInnovation(false);
+}
   return (
     <>
       {!showInnovation ? (
@@ -21,10 +23,10 @@ const Calendar = () => {
             <FaAngleRight />
           </h4>
           <CalendarHeader />
-          <TimeSlots onPreview={openInnovation} />
+          <TimeSlots click={openInnovation} />
         </CalendarWrap>
       ) : (
-        <Innovation />
+        <Innovation BackToPage={BackToPage}/>
       )}
     </>
   );

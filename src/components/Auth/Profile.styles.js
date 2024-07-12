@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const ProfileWrap = styled.div`
-  background-color: var(--primary-darkblue);
+  background-color: var(--BG-bolor);
   color: var(--white);
   padding: 80px 0;
   .container {
@@ -12,15 +12,31 @@ export const ProfileWrap = styled.div`
     justify-content: center;
     flex-direction: column;
     .profile {
+      position: relative;
       padding-bottom: 20px;
-      button {
-        display: block;
-        margin: 0 auto;
+      overflow: hidden; /* Ensure the overlay does not extend beyond the profile boundaries */
 
-        &:hover {
-          border-bottom: 1px solid var(--white);
-          transition: all ease-in 0.3s;
-        }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .profile:hover .overlay {
+        opacity: 1;
+      }
+
+      .overlay-icon {
+        color: white;
+        font-size: 2rem;
       }
       img {
         width: 165px;
@@ -46,7 +62,14 @@ export const ProfileWrap = styled.div`
           display: flex;
           margin-bottom: 10px;
         }
+
+        .custom-select-container {
+          position: relative;
+          width: 100%;
+        }
+
         select {
+          appearance: none; /* Hide the default arrow */
           padding: 12px 25px;
           background-color: transparent;
           border-radius: 10px;
@@ -58,8 +81,19 @@ export const ProfileWrap = styled.div`
           box-sizing: border-box;
           width: 100%;
           margin-bottom: 15px;
+          cursor: pointer; /* Ensure cursor changes on hover */
         }
-        option{
+
+        .custom-select-icon {
+          position: absolute;
+          top: 44%;
+          font-size: 30px;
+          right: 10px; /* Adjust position as needed */
+          transform: translateY(-50%);
+          pointer-events: none; /* Prevent icon from intercepting clicks */
+        }
+
+        option {
           background-color: transparent;
         }
       }
